@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Summary</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-slate-900 text-white min-h-screen flex items-center justify-center">
+
+<div class="w-full max-w-5xl p-8">
+
+  <h1 class="text-3xl font-bold text-center mb-10">Financial Summary</h1>
+
+  <!-- CARDS -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+    <div class="bg-green-600 p-6 rounded-xl text-center shadow">
+      <p class="uppercase text-sm opacity-80">Income</p>
+      <p class="text-2xl font-bold mt-2">₹{{ income }}</p>
+    </div>
+
+    <div class="bg-red-600 p-6 rounded-xl text-center shadow">
+      <p class="uppercase text-sm opacity-80">Expense</p>
+      <p class="text-2xl font-bold mt-2">₹{{ expense }}</p>
+    </div>
+
+    <div class="bg-indigo-600 p-6 rounded-xl text-center shadow">
+      <p class="uppercase text-sm opacity-80">Balance</p>
+      <p class="text-2xl font-bold mt-2">₹{{ balance }}</p>
+    </div>
+  </div>
+
+  <!-- CHART -->
+  <div class="flex justify-center mb-10">
+    <canvas id="chart" class="bg-white p-4 rounded-xl max-w-sm"></canvas>
+  </div>
+
+  <!-- CLEAR -->
+  <form action="/clear" method="post" class="text-center mb-6">
+    <button onclick="return confirm('Clear all data?')"
+      class="bg-red-700 hover:bg-red-800 px-6 py-3 rounded-lg font-semibold">
+      Clear Summary
+    </button>
+  </form>
+
+  <!-- NAV -->
+  <div class="flex justify-between text-sm">
+    <a href="/dashboard" class="text-indigo-400 hover:underline">← Back</a>
+    <a href="/logout" class="text-red-400 hover:underline">Logout</a>
+  </div>
+
+</div>
+
+<script>
+new Chart(document.getElementById("chart"), {
+  type: "doughnut",
+  data: {
+    labels: ["Income", "Expense"],
+    datasets: [{
+      data: [{{ income }}, {{ expense }}],
+      backgroundColor: ["#22c55e", "#ef4444"]
+    }]
+  }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-900 text-white min-h-screen flex items-center justify-center">
+
+<div class="bg-slate-800 p-8 rounded-xl w-96 shadow-xl">
+  <h1 class="text-2xl font-bold mb-6 text-center">Personal Finance Tracker</h1>
+
+  <form method="post" class="space-y-4">
+    <select name="type" class="w-full p-2 rounded text-black">
+      <option>Income</option>
+      <option>Expense</option>
+    </select>
+
+    <input name="amount" type="number" required placeholder="Amount"
+      class="w-full p-2 rounded text-black">
+
+    <input name="category" placeholder="Category"
+      class="w-full p-2 rounded text-black">
+
+    <button class="w-full bg-indigo-600 hover:bg-indigo-700 p-2 rounded font-semibold">
+      Add Transaction
+    </button>
+  </form>
+
+  <div class="mt-6 text-sm flex justify-between">
+    <a href="/summary" class="text-indigo-400">View Summary →</a>
+    <a href="/logout" class="text-red-400">Logout</a>
+  </div>
+</div>
+
+</body>
+</html>

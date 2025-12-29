@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(180deg, #020617, #020617);
+  color: #e5e7eb;
+}
+
+.app {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #38bdf8;
+}
+
+.subtitle {
+  color: #94a3b8;
+  margin-top: 8px;
+}
+
+/* Stats */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.stat-card span {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.stat-card h2 {
+  margin-top: 12px;
+  font-size: 28px;
+}
+
+.income h2 { color: #22c55e; }
+.expense h2 { color: #ef4444; }
+.balance h2 { color: #eab308; }
+
+/* Chart */
+.chart-card {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 30px;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Back link */
+.back-link {
+  display: block;
+  margin-top: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: #38bdf8;
+}
