@@ -32,7 +32,32 @@ def main():
 
 
         elif choice == "2":
-            print("Summary feature coming soon...")
+    income = 0
+    expense = 0
+
+    try:
+        with open("data.csv", "r") as file:
+            next(file)  # skip header
+            for line in file:
+                t_type, amount, _ = line.strip().split(",")
+                amount = float(amount)
+
+                if t_type == "income":
+                    income += amount
+                elif t_type == "expense":
+                    expense += amount
+
+        balance = income - expense
+
+        print("\n--- Financial Summary ---")
+        print(f"Total Income: {income}")
+        print(f"Total Expense: {expense}")
+        print(f"Balance: {balance}")
+
+    except FileNotFoundError:
+        print("No data found. Add transactions first.")
+
+
         elif choice == "3":
             print("Exiting application. Goodbye!")
             break
