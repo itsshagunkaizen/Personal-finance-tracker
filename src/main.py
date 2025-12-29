@@ -50,9 +50,11 @@ def main():
         balance = income - expense
 
         print("\n--- Financial Summary ---")
-        print(f"Total Income: {income}")
-        print(f"Total Expense: {expense}")
-        print(f"Balance: {balance}")
+        print(f"Total Income : ₹{income}")
+        print(f"Total Expense: ₹{expense}")
+        print(f"Balance      : ₹{balance}")
+
+
 
     except FileNotFoundError:
         print("No data found. Add transactions first.")
