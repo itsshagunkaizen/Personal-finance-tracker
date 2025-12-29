@@ -16,4 +16,5 @@ categorize transactions, and understand spending patterns.
 - Data Storage: Local (CSV / JSON)
 
 ## Status
-In progress
+Core features implemented (CLI version)
+
