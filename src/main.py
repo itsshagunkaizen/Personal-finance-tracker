@@ -11,7 +11,26 @@ def main():
         choice = input("Enter your choice (1-3): ")
 
         if choice == "1":
-            print("Add transaction feature coming soon...")
+    t_type = input("Enter type (income/expense): ").lower()
+    amount = input("Enter amount: ")
+    category = input("Enter category: ")
+
+    if t_type not in ["income", "expense"]:
+        print("Invalid transaction type.")
+        continue
+
+    try:
+        amount = float(amount)
+    except ValueError:
+        print("Amount must be a number.")
+        continue
+
+    with open("data.csv", "a") as file:
+        file.write(f"{t_type},{amount},{category}\n")
+
+    print("Transaction added successfully!")
+
+
         elif choice == "2":
             print("Summary feature coming soon...")
         elif choice == "3":
